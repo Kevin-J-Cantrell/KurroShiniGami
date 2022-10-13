@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 0%;
+    background-size: contain;
+}
+
+.onigiri {
+    height: 60px;
+    width: 60px;
+    background-color: black;
+    display: inline-block;
+    background-image: url(img/onigiri.png)
+}
+
+.sushi {
+    height: 60px;
+    width: 60px;
+    background-color: black;
+    display: inline-block;
+    background-image: url(img/sushi.png)
+}
+
+#enemy {
+    background-color: black;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    background-image: url(img/pumpky.gif)
+}
+
+#enemy2 {
+    background-color: black;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    background-image: url(img/red.gif)
+}
+
+#enemy3 {
+    background-color: black;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    background-image: url(img/pinky.gif)
+}
+
+#player {
+    height: 60px;
+    width: 60px;
+    background-image: url(img/right.gif);
+    background-color: black;
+    position: absolute;
+}
+
+button {
+
+    margin-left: 130px;
+    height: 30px;
+}
+
+.Wall {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background-image: url(img/wall.jpg)
+}
+
+
+.blank {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background-size: 80px;
+    background-color: black;
+}
+
+.innerWall {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background-image: url(img/innerWall.jpg)
+}
+
+h1 {
+    text-align: center;    
+    padding-top: 20px;
+    background-color: aqua;
+    height: 40px;
+    width: 130px;
+}
+
+h2 {
+    
+    text-align: center;
+    margin-top: -40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    background-color: rgb(0, 166, 255);
+    height: 30px;
+    width: 120px;
+}

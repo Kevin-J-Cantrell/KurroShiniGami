@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+  
+    
+}
+.black {
+    display: inline-block;
+    border: solid 1px black;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    color: black;
+}
+.white {
+   display: inline-block;
+    border: solid 1px black;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color: white;
+}
+#World {
+    margin: 0 auto;
+    border: solid 1px black;
+    margin-top: 200px;
+    width: 420px;
+    font-size: 0px;
+}

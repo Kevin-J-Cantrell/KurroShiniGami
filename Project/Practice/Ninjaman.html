@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>NinjaManGame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>ScoreBoard</h2>
+    <div class="container">
+        <div class="box" id="enemy"></div>
+        <div class="box" id="ninjaman"></div>
+    </div>
+    <div class id="game"></div>
+</body>
+<script type="text/javascript">
+
+    let game = [
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,],
+        [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2,],
+        [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2,],
+        [2, 3, 2, 3, 3, 3, 2, 4, 4, 4, 4, 4, 2, 2, 3, 2, 2,],
+        [2, 3, 2, 3, 2, 3, 3, 4, 2, 2, 2, 4, 3, 3, 3, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 2, 4, 2, 4, 2, 4, 2, 3, 2, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 2, 4, 2, 4, 2, 4, 2, 3, 2, 3, 2,],
+        [2, 3, 2, 3, 2, 4, 2, 3, 4, 4, 4, 4, 2, 3, 2, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2, 3, 2, 3, 2,],
+        [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2, 3, 2, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 2, 4, 4, 4, 4, 4, 2, 3, 2, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 2, 4, 2, 4, 2, 4, 2, 3, 2, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 2, 4, 2, 4, 2, 4, 2, 3, 2, 3, 2,],
+        [2, 3, 2, 3, 2, 3, 3, 4, 2, 2, 2, 4, 3, 3, 3, 3, 2,],
+        [2, 3, 2, 3, 3, 3, 2, 4, 4, 4, 4, 4, 2, 2, 3, 2, 2,],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,],
+    ]
+    game.sort(() => 0.5 - Math.random())
+    let gameDict = {
+        1: 'wall',
+        2: 'block',
+        3: 'onigiri',
+        4: 'sushi',
+    }
+
+    function drawscore() {
+
+    }
+
+    function drawgame() {
+        output = "";
+
+        for (let row = 0; row < game.length; row++) {
+            output += "<div class= 'row'>"
+            for (let x = 0; x < game[row].length; x++) {
+                output += "<div class='" + gameDict[game[row][x]] + "'></div>"
+            }
+            output += "</div>"
+        }
+        document.getElementById("game").innerHTML = output;
+    }
+    drawgame()
+
+    var ninjaman = {
+        x: 1,
+        y: 1,
+    }
+    var enemy = {
+        x: 1,
+        y: 1,
+    }
+    function drawenemy() {
+        document.getElementById("enemy").style.top = enemy.y * 300 + "px";
+        document.getElementById("enemy").style.left = enemy.x * 40 + "px";
+    }
+    drawenemy();
+    function drawninjaman() {
+        document.getElementById("ninjaman").style.top = ninjaman.y * 40 + "px";
+        document.getElementById("ninjaman").style.left = ninjaman.x * 40 + "px";
+    }
+    drawninjaman()
+
+
+    document.onkeydown = function (e) {
+        if (e.keyCode == 37) {
+            if (game[ninjaman.y][ninjaman.x - 1] != 2) {
+                ninjaman.x--;
+            }
+        }
+        if (e.keyCode == 38) {
+            if (game[ninjaman.y - 1][ninjaman.x] != 2) {
+                ninjaman.y--;
+            }
+        }
+        if (e.keyCode == 39) {
+            if (game[ninjaman.y][ninjaman.x + 1] != 2) {
+                ninjaman.x++;
+            }
+        }
+        if (e.keyCode == 40) {
+            if (game[ninjaman.y + 1][ninjaman.x] != 2) {
+                ninjaman.y++;
+            }
+
+        }
+        game[ninjaman.y][ninjaman.x] = 1;
+        game[enemy.y][enemy.x] != 2;
+        drawenemy()
+        drawninjaman()
+        drawgame()
+
+
+
+    }
+
+
+
+
+
+</script>
+
+</html>
